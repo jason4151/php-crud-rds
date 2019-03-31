@@ -1,14 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: master.d/
-    destination: /etc/salt/master.d/
-  - source: minion.d
-    destination: /etc/salt/minion.d/
-  - source: pillars/
-    destination: /etc/salt/pillars/
-  - source: states/
-    destination: /etc/salt/states/
+  - source: app/
+    destination: /var/www/html
+  - source: inc/
+    destination: /var/www/inc
 hooks:
   ApplicationStart:
     - location: deploy_hooks/start_service.sh
