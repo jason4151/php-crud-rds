@@ -50,6 +50,7 @@
     <td>ID</td>
     <td>Name</td>
     <td>Email Address</td>
+    <td>Action</td>
   </tr>
 
 <?php
@@ -60,7 +61,8 @@ while($query_data = mysqli_fetch_row($result)) {
   echo "<tr>";
   echo "<td>",$query_data[0], "</td>",
        "<td>",$query_data[1], "</td>",
-       "<td>",$query_data[2], "</td>";
+       "<td>",$query_data[2], "</td>",
+       "<td>",'<a href="delete.php?id=',$query_data[0],'">Delete</a>',"</td>";
   echo "</tr>";
 }
 ?>
