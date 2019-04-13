@@ -1,7 +1,7 @@
 <?php include "../inc/dbinfo.inc"; ?>
 <html>
 <body>
-<h1>Capstone App April</h1>
+<h1>Capstone App</h1>
 <?php
 
   /* Connect to MySQL and select the database. */
