@@ -16,10 +16,10 @@
 
   /* If input fields are populated, add a row to the Employees table. */
   $employee_name = htmlentities($_POST['Name']);
-  $employee_address = htmlentities($_POST['Address']);
+  $employee_email_address = htmlentities($_POST['EmailAddress']);
 
-  if (strlen($employee_name) || strlen($employee_address)) {
-    AddEmployee($connection, $employee_name, $employee_address);
+  if (strlen($employee_name) || strlen($employee_email_address)) {
+    AddEmployee($connection, $employee_name, $employee_email_address);
   }
 ?>
 
@@ -28,14 +28,14 @@
   <table border="0">
     <tr>
       <td>Name</td>
-      <td>Address</td>
+      <td>Email Address</td>
     </tr>
     <tr>
       <td>
         <input type="text" name="Name" maxlength="45" size="30" />
       </td>
       <td>
-        <input type="text" name="Address" maxlength="90" size="60" />
+        <input type="text" name="EmailAddress" maxlength="90" size="60" />
       </td>
       <td>
         <input type="submit" value="Add Data" />
@@ -49,7 +49,7 @@
   <tr>
     <td>ID</td>
     <td>Name</td>
-    <td>Address</td>
+    <td>Email Address</td>
   </tr>
 
 <?php
@@ -82,11 +82,11 @@ while($query_data = mysqli_fetch_row($result)) {
 <?php
 
 /* Add an employee to the table. */
-function AddEmployee($connection, $name, $address) {
+function AddEmployee($connection, $name, $emailaddress) {
    $n = mysqli_real_escape_string($connection, $name);
-   $a = mysqli_real_escape_string($connection, $address);
+   $a = mysqli_real_escape_string($connection, $emailaddress);
 
-   $query = "INSERT INTO `Employees` (`Name`, `Address`) VALUES ('$n', '$a');";
+   $query = "INSERT INTO `Employees` (`Name`, `EmailAddress`) VALUES ('$n', '$a');";
 
    if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
 }
@@ -98,7 +98,7 @@ function VerifyEmployeesTable($connection, $dbName) {
      $query = "CREATE TABLE `Employees` (
          `ID` int(11) NOT NULL AUTO_INCREMENT,
          `Name` varchar(45) DEFAULT NULL,
-         `Address` varchar(90) DEFAULT NULL,
+         `EmailAddress` varchar(90) DEFAULT NULL,
          PRIMARY KEY (`ID`),
          UNIQUE KEY `ID_UNIQUE` (`ID`)
        ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
