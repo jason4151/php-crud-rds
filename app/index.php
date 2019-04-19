@@ -1,7 +1,7 @@
 <?php include "../inc/dbinfo.inc"; ?>
 <html>
-<body>
-<h1>Capstone App</h1>
+<body bgcolor="#D7DBDD">
+<h1>Capstone App Test Branch</h1>
 <?php
 
   /* Connect to MySQL and select the database. */
