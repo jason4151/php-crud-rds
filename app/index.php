@@ -1,7 +1,7 @@
 <?php include "../inc/dbinfo.inc"; ?>
 <html>
 <body>
-<h1>Demo App - Master Branch</h1>
+<h1>Production Demo App (Master Branch)</h1>
 <?php
 
   /* Connect to MySQL and select the database. */
