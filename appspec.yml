@@ -3,8 +3,6 @@ os: linux
 files:
   - source: app/
     destination: /var/www/html
-  - source: inc/
-    destination: /var/www/inc
 hooks:
   ApplicationStart:
     - location: deploy_hooks/start_service.sh
