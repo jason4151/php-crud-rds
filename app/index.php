@@ -1,7 +1,7 @@
 <?php include "../inc/dbinfo.inc"; ?>
 <html>
-<body>
-<h1>Production Demo App (Master Branch)</h1>
+<body bgcolor="#D7DBDD">
+<h1> Automox Test Demo App 0.1</h1>
 <?php
 
   /* Connect to MySQL and select the database. */
